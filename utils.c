@@ -6,7 +6,7 @@
 /*   By: tasargsy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 02:12:43 by tasargsy          #+#    #+#             */
-/*   Updated: 2025/07/19 20:19:03 by tasargsy         ###   ########.fr       */
+/*   Updated: 2025/07/21 17:37:55 by tasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_kill(pid_t pid, int signo)
 {
 	if (kill(pid, signo) < 0)
 	{
-		perror("ft_kill failed");
+		ft_printf("ft_kill failed");
 		exit(EXIT_FAILURE);
 	}
 }
