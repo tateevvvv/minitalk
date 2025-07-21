@@ -6,7 +6,7 @@
 /*   By: tasargsy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 02:12:43 by tasargsy          #+#    #+#             */
-/*   Updated: 2025/07/19 15:41:57 by tasargsy         ###   ########.fr       */
+/*   Updated: 2025/07/19 20:19:03 by tasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,37 @@ void	*ft_memset(void *buff, int c, size_t len)
 {
 	unsigned char	*ptr;
 
-	ptr = (unsigned char *) buff;
+	ptr = (unsigned char *)buff;
 	while (len--)
 	{
-		ptr[len] = (unsigned char) c;
+		ptr[len] = (unsigned char)c;
 	}
 	return (buff);
+}
+
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int	num;
+	int	sign;
+
+	i = 0;
+	num = 0;
+	sign = 1;
+	while (str[i] == '\t' || str[i] == '\v' || str[i] == '\n' || str[i] == '\f'
+		|| str[i] == '\r' || str[i] == ' ')
+		i++;
+	if (str[i] == '-')
+	{
+		sign *= -1;
+		i++;
+	}
+	else if (str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = num * 10 + str[i] - '0';
+		i++;
+	}
+	return (sign * num);
 }

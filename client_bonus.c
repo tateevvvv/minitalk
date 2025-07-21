@@ -6,7 +6,7 @@
 /*   By: tasargsy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 15:35:39 by tasargsy          #+#    #+#             */
-/*   Updated: 2025/07/19 15:52:55 by tasargsy         ###   ########.fr       */
+/*   Updated: 2025/07/19 20:19:53 by tasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 		ft_printf("Usage = ./server <PID> \"Message\"\n");
 		exit(EXIT_FAILURE);
 	}
-	server = atoi(argv[1]);
+	server = ft_atoi(argv[1]);
 	message = argv[2];
 	ft_signal(SIGUSR1, ack_handler, false);
 	ft_signal(SIGUSR2, end_handler, false);
